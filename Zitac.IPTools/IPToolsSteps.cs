@@ -4,7 +4,7 @@ using DecisionsFramework.Design.Flow;
 
 namespace Zitac.IPTools
 {
-[AutoRegisterMethodsOnClass(true, "Integration", "IPTools")]
+    [AutoRegisterMethodsOnClass(true, "Integration", "IPTools")]
     public class IPToolSteps
     {
         public bool AreIpsInSameSubnet(string ipAddress1, string ipAddress2, string subnetMask)
@@ -52,6 +52,54 @@ namespace Zitac.IPTools
                 }
             }
             return true;
+        }
+
+        public bool IsValidSubnet(string subnetAddress, string subnetMask)
+        {
+            // Parse strings to IPAddress
+            IPAddress subnet = IPAddress.Parse(subnetAddress);
+            IPAddress mask = IPAddress.Parse(subnetMask);
+
+            // Convert IP addresses to byte arrays
+            byte[] subnetBytes = subnet.GetAddressBytes();
+            byte[] maskBytes = mask.GetAddressBytes();
+
+            // Validate if subnet is valid
+            for (int i = 0; i < subnetBytes.Length; i++)
+            {
+                if ((subnetBytes[i] & maskBytes[i]) != subnetBytes[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public bool IsValidSubnetMask(string subnetMask)
+        {
+            IPAddress mask = IPAddress.Parse(subnetMask);
+            byte[] maskBytes = mask.GetAddressBytes();
+
+            bool encounteredZero = false; // Flag to check if we’ve encountered a 0 bit
+            for (int i = 0; i < maskBytes.Length; i++)
+            {
+                byte byteVal = maskBytes[i];
+                for (int bit = 7; bit >= 0; bit--) // Check bits from left to right
+                {
+                    bool isBitSet = (byteVal & (1 << bit)) != 0;
+
+                    if (!isBitSet) // If bit is 0
+                    {
+                        encounteredZero = true;
+                    }
+                    else if (encounteredZero) // If bit is 1 and we’ve seen a 0 bit
+                    {
+                        // Invalid because we have a 1 bit after a 0 bit
+                        return false;
+                    }
+                }
+            }
+            return encounteredZero; // Valid if we’ve encountered at least one 0 bit
         }
     }
 }
