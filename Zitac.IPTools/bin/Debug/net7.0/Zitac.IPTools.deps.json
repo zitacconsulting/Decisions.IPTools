@@ -1,0 +1,45 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Zitac.IPTools/1.0.0": {
+        "dependencies": {
+          "DecisionsSDK": "8.14.0"
+        },
+        "runtime": {
+          "Zitac.IPTools.dll": {}
+        }
+      },
+      "DecisionsSDK/8.14.0": {
+        "runtime": {
+          "lib/net7.0/Decisions.Web.Core.dll": {
+            "assemblyVersion": "8.14.0.0",
+            "fileVersion": "8.14.0.6820"
+          },
+          "lib/net7.0/DecisionsFramework.dll": {
+            "assemblyVersion": "8.14.0.0",
+            "fileVersion": "8.14.0.6820"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Zitac.IPTools/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DecisionsSDK/8.14.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-5tHQoZZHeoeEqX/0+yMlRuCOzBvgqyzg2FX57o2yIDnP87f2GCzrshl5FqnuMGOx4rXdPw9ySvad3oyMcSRV4A==",
+      "path": "decisionssdk/8.14.0",
+      "hashPath": "decisionssdk.8.14.0.nupkg.sha512"
+    }
+  }
+}
