@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Net;
+using System.Net.NetworkInformation;
+using System.Threading.Tasks;
 using DecisionsFramework.Design.Flow;
 
 namespace Zitac.IPTools
@@ -101,5 +103,6 @@ namespace Zitac.IPTools
             }
             return encounteredZero; // Valid if we’ve encountered at least one 0 bit
         }
+
     }
 }
