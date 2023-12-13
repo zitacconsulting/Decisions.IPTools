@@ -62,9 +62,6 @@ public class IPIsInUse : BaseFlowAwareStep, ISyncStep, IDataConsumer, IDataProdu
                     return new ResultData("False");
                 }
 
-                Dictionary<string, object> dictionary = new Dictionary<string, object>();
-                dictionary.Add("Result", (object)Result);
-                return new ResultData("Done", (IDictionary<string, object>)dictionary);
             }
         }
 
