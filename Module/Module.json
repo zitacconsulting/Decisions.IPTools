@@ -1,7 +1,7 @@
 {
     "ModuleName": "Zitac",
     "ModuleDependencies": null,
-    "Version": "8.15.0",
+    "Version": "8.16.0",
     "RequiresLicense": false,
     "Description": "Module with IP Tools",
     "CompiledOnDate": "2023-10-18T11:52:29.8228305+01:30",
