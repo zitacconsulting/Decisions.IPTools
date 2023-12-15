@@ -32,7 +32,17 @@ namespace Zitac.IPTools
             return true;
         }
 
-
+        public bool ValidateIPAddress(string ipAddress)
+        {
+            if (IPAddress.TryParse(ipAddress, out _))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public bool IsIpAddressInSubnet(string ipAddress, string subnetAddress, string subnetMask)
         {
             // Parse strings to IPAddress
