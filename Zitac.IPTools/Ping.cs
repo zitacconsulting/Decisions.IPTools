@@ -64,7 +64,10 @@ public class IPIsInUse : BaseFlowAwareStep, ISyncStep, IDataConsumer, IDataProdu
 
             }
         }
-
+        catch (PingException)
+        {
+                return new ResultData("False");
+        }
         catch (Exception e)
         {
             string ExceptionMessage = e.ToString();
