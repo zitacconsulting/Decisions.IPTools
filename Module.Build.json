@@ -1,0 +1,20 @@
+{
+    "Resources": {
+        "NoComponents": true,
+        "CoreServicesDlls": [
+            "./Zitac.IPTools/bin/Zitac.IPTools.dll"
+        ],
+        "CustomImages": null,
+        "CliDlls": null,
+        "WebPages": null,
+        "SilverlightDlls": null,
+        "AgentDlls": null,
+        "InstallScript": null,
+        "SqlScripts": null,
+        "ObjectsToImport": null,
+        "MsSqlScript": null
+    },
+    "Version": "9.4.0",
+    "ImagePath": "ip-address-svgrepo-com.svg",
+    "Description": "Module with Tools for validating IP, Mac, Netmask etc."
+}
